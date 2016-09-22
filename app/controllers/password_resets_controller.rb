@@ -51,6 +51,7 @@ class PasswordResetsController < ApplicationController
       unless (@user && @user.activated? &&
             @user.authenticated?(:reset, params[:id]))
         redirect_to root_url
+      end
     end
 
     #再設定用のトークンが期限切れかどうかを確認する
